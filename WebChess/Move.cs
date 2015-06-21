@@ -17,5 +17,11 @@ namespace WebChess
         /// Piece location destination
         /// </summary>
         public Position destination { get; set; }
+
+        public Move(Position o, Position d)
+        {
+            origin = o;
+            destination = d;
+        }
     }
 }

@@ -26,20 +26,20 @@ namespace WebChess
                 color <= 0 ?
                 new List<Move>
                 {
-                    new Move() { origin = pos, destination = new Position(x, y + 1) },
-                    new Move() { origin = pos, destination = new Position(x, y + 2) },
-                    new Move() { origin = pos, destination = new Position(x + 1, y + 1) },
-                    new Move() { origin = pos, destination = new Position(x - 1, y + 1) }
+                    new Move(pos, new Position(x, y + 1)),
+                    new Move(pos, new Position(x, y + 2)),
+                    new Move(pos, new Position(x + 1, y + 1)),
+                    new Move(pos, new Position(x - 1, y + 1))
                 } : 
                 new List<Move>
                 {
-                    new Move() { origin = pos, destination = new Position(x, y - 1) },
-                    new Move() { origin = pos, destination = new Position(x, y - 2) },
-                    new Move() { origin = pos, destination = new Position(x + 1, y - 1) },
-                    new Move() { origin = pos, destination = new Position(x - 1, y - 1) }
+                    new Move(pos, new Position(x, y - 1)),
+                    new Move(pos, new Position(x, y - 2)),
+                    new Move(pos, new Position(x + 1, y - 1)),
+                    new Move(pos, new Position(x - 1, y - 1))
                 });
 
-            //Remove bad moves
+            //Remove off-board moves
             moves.RemoveAll(q => q.destination.x > 7
                             || q.destination.x < 0
                             || q.destination.y > 7
