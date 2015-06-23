@@ -18,9 +18,8 @@ namespace WebChess
         {
             foreach (Move move in m)
             {
-                //Rule 1: A piece cannot move onto a spot occupied by 
+                //Rule 1: A piece cannot move onto a spot occupied by a piece of the same team
             }
         }
-
     }
 }

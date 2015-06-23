@@ -39,8 +39,6 @@ namespace WebChess
                             || q.destination.y > 7
                             || q.destination.y < 0);
 
-
-
             return moves;
         }
     }
