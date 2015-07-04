@@ -23,5 +23,9 @@ namespace WebChess
             x = a;
             y = b;
         }
+        public override string ToString()
+        {
+            return "(" + x + "," + y + ")";
+        }
     }
 }

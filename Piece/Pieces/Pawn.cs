@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 namespace WebChess
 {
-    class Pawn : Piece
+    public class Pawn : Piece
     {
+        public readonly string name = "Pawn";
+
         /// <summary>
         /// Pawn Constructor
         /// </summary>
@@ -47,6 +49,16 @@ namespace WebChess
 
             return moves;
         }
-        
+        public override string ToString()
+        {
+            if (color == PieceColor.Black)
+            {
+                return "BlackPawn";
+            }
+            else
+            {
+                return "WhitePawn";
+            }
+        }
     }
 }

@@ -3,18 +3,19 @@ using System.Collections.Generic;
 
 namespace WebChess
 {
-    class Bishop : Piece
+    public class Queen : Piece
     {
+        public readonly string name = "Queen";
+
         /// <summary>
-        /// Bishop Constructor
+        /// Queen Constructor
         /// </summary>
         /// <param name="color"></param>
-        public Bishop(PieceColor color)
-            :base (color)
+        public Queen(PieceColor color)
+            : base(color)
         {
 
         }
-
 
         public override List<Move> GetPossibleMoves(Position pos)
         {
@@ -30,7 +31,11 @@ namespace WebChess
                         new Move(pos, new Position(x + i, y + i)),
                         new Move(pos, new Position(x - i, y + i)),
                         new Move(pos, new Position(x + i, y - i)),
-                        new Move(pos, new Position(x - i, y - i))
+                        new Move(pos, new Position(x - i, y - i)),
+                        new Move(pos, new Position(x + i, y)),
+                        new Move(pos, new Position(x - i, y)),
+                        new Move(pos, new Position(x, y + i)),
+                        new Move(pos, new Position(x, y - i))
                     }
                 );
             }
@@ -41,9 +46,19 @@ namespace WebChess
                             || q.destination.y > 7
                             || q.destination.y < 0);
 
-
             return moves;
         }
-       
+
+        public override string ToString()
+        {
+            if (color == PieceColor.Black)
+            {
+                return "BlackQueen";
+            }
+            else
+            {
+                return "WhiteQueen";
+            }
+        }
     }
 }

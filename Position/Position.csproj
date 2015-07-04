@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{11ADA3DE-98D8-41D9-8BAE-E64ED0003C40}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{D88B6536-9E2C-42C5-AC88-FCB174903FEF}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebChess</RootNamespace>
-    <AssemblyName>WebChess</AssemblyName>
+    <RootNamespace>Position</RootNamespace>
+    <AssemblyName>Position</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,30 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WebChess.cs" />
+    <Compile Include="Move.cs" />
+    <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BoardServer\BoardServer.csproj">
-      <Project>{a045f47b-157b-4764-be17-3a1e029e04bd}</Project>
-      <Name>BoardServer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Board\Board.csproj">
-      <Project>{ce3c326a-a8ee-49b7-8f11-85350ba2f3f0}</Project>
-      <Name>Board</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Piece\Piece.csproj">
-      <Project>{9064fc26-26f8-407a-8de9-35623a73c4ee}</Project>
-      <Name>Piece</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Position\Position.csproj">
-      <Project>{d88b6536-9e2c-42c5-ac88-fcb174903fef}</Project>
-      <Name>Position</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

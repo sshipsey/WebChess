@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 namespace WebChess
 {
-    class King : Piece
+    public class King : Piece
     {
+        public readonly string name = "King";
+
         /// <summary>
         /// King Constructor
         /// </summary>
@@ -44,6 +46,17 @@ namespace WebChess
 
 
             return moves;
+        }
+        public override string ToString()
+        {
+            if (color == PieceColor.Black)
+            {
+                return "BlackKing";
+            }
+            else
+            {
+                return "WhiteKing";
+            }
         }
     }
 }

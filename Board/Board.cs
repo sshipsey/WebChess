@@ -1,14 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace WebChess
 {
     public class Board
     {
         private Dictionary<Position, Piece> state;
+
+        /// <summary>
+        /// Getter for board state
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<Position, Piece> GetState()
+        {
+            return state;
+        }
 
         /// <summary>
         /// Initialize default board state
@@ -71,5 +76,20 @@ namespace WebChess
             state.TryGetValue(pos, out p);
             return p;
         }
+
+        /// <summary>
+        /// Prints board to screen
+        /// </summary>
+        /// <returns></returns>
+        public string Print()
+        {
+            string retVal = "";
+
+
+
+            return retVal;
+        }
+
+
     }
 }

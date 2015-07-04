@@ -3,14 +3,16 @@ using System.Collections.Generic;
 
 namespace WebChess
 {
-    class Queen : Piece
+    public class Rook : Piece
     {
+        public readonly string name = "Rook";
+
         /// <summary>
-        /// Queen Constructor
+        /// Rook Constructors
         /// </summary>
         /// <param name="color"></param>
-        public Queen(PieceColor color)
-            : base(color)
+        public Rook(PieceColor color)
+            :base (color)
         {
 
         }
@@ -20,16 +22,12 @@ namespace WebChess
             List<Move> moves = new List<Move>();
             int x = pos.x;
             int y = pos.y;
-            
+
             for (int i = 1; i < 8; i++)
             {
                 moves.AddRange(
                     new List<Move>
                     {
-                        new Move(pos, new Position(x + i, y + i)),
-                        new Move(pos, new Position(x - i, y + i)),
-                        new Move(pos, new Position(x + i, y - i)),
-                        new Move(pos, new Position(x - i, y - i)),
                         new Move(pos, new Position(x + i, y)),
                         new Move(pos, new Position(x - i, y)),
                         new Move(pos, new Position(x, y + i)),
@@ -45,6 +43,18 @@ namespace WebChess
                             || q.destination.y < 0);
 
             return moves;
+        }
+
+        public override string ToString()
+        {
+            if (color == PieceColor.Black)
+            {
+                return "BlackRook";
+            }
+            else
+            {
+                return "WhiteRook";
+            }
         }
     }
 }
