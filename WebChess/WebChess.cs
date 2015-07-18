@@ -12,7 +12,7 @@ namespace WebChess
 
             //DEPENDENCY INJECTION!
             var httpServer = new HttpServer(servePort, b);
-
+            Console.WriteLine("Server is running");
             Console.ReadLine();
         }
     }

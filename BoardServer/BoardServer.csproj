@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BoardServer.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="HttpServer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

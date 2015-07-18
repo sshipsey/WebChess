@@ -1,14 +1,18 @@
-var WebChess = angular.module("WebChess", []);
+/*global angular*/
 
-WebChess.config(['$routeProvider',function($routeProvider) {
-    
+var WebChess = angular.module('WebChess', ['ngRoute']);
+
+WebChess.config(['$routeProvider', function ($routeProvider) {
+    'use strict';
     $routeProvider
-    
-    .when('/home', {
-        templateUrl: 'home.html',
-        controller: 'HomeController',
-    })
-    .otherwise({
-        redirectTo : '/home'
-    });
+        .when('/home', {
+            templateUrl: 'partials/home.html',
+            controller: 'HomeCtrl'
+        })
+        .when('/about', {
+            templateUrl: 'partials/about.html'
+        })
+        .otherwise({
+            redirectTo : '/home'
+        });
 }]);

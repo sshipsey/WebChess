@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace WebChess
@@ -45,6 +46,7 @@ namespace WebChess
                                           + "Content-Length: {2}\r\n"
                                           + "Content-Type: {3}\r\n"
                                           + "Keep-Alive: Close\r\n"
+                                          + "Access-Control-Allow-Origin: *\r\n"
                                           + "\r\n",
                                           responseCode, _serverName, json.Length, contentType);
 
@@ -53,7 +55,6 @@ namespace WebChess
             // Send header & data
             var headerBytes = Encoding.ASCII.GetBytes(header);
             data = Encoding.ASCII.GetBytes(json);
-
             await _networkStream.WriteAsync(headerBytes, 0, headerBytes.Length);
             await _networkStream.WriteAsync(data, 0, data.Length);
             await _networkStream.FlushAsync();
